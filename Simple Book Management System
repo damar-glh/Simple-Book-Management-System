@@ -1,0 +1,170 @@
+#include <iostream>
+using namespace std;
+
+
+/*
+         Informasi Tentang Project
+Nama Project       : Sistem Manajemen Toko Buku Sederhana atau Simple Bookstore Management System
+DIbuat Oleh        : Damar Galih
+Jurusan            : Informatika
+Kelas              : IF-11
+Tanggal Pembuatan  : Mulai 07/11/2022
+Tentang Project    : Project ini bertujuan untuk meengerjakan UTS Algoritma dan Pemrograman Semester 1
+*/
+
+
+int main(){
+	int choice, choice1, choice2, out = 1, harga, jml;
+	string name, map, email, nameBook, no;
+	
+	// menu awal
+	menu:
+   	cout << "\n";
+   	cout << " https://bookshop.com/" << name << endl;
+ 	cout <<" " << map << endl;
+   	cout <<" " << email << endl;
+   	cout <<" " << no << "\n\n";
+	cout << " +---------------------------------------------------------------------------------------------------------------+" << endl;
+   	cout << " \t\tJika Halaman Diatas Belum Terisi Nama Anda Maka Anda Harus Membuat Akun Terlebih Dahulu !!! " << endl ;
+   	cout << " +---------------------------------------------------------------------------------------------------------------+ \n\n";
+		
+	cout << "\n";
+    cout << "\t\t\t +------------------------     Menu Pilihan     -----------------------+" << endl;
+    cout << "\t\t\t |                                                                     |" << endl;
+    cout << "\t\t\t |                      1.  Membuat Akun                               |" << endl;
+    cout << "\t\t\t |                      2.  Buku Terbaru                               |" << endl;
+    cout << "\t\t\t |                      3.  Beli Buku                                  |" << endl;
+    cout << "\t\t\t |                      4.  Keluar                                     |" << endl;
+    cout << "\t\t\t |                                                                     |" << endl;
+    cout << "\t\t\t +---------------------------------------------------------------------+" << endl;
+
+   cout << "\n\t Pilihan Anda : ";
+   cin >> choice;
+   system("cls");
+   
+   switch (choice){
+   	
+    case 1 :
+   		// menu 1
+   		profil:
+   	    cout << "\n";
+   	    cout << " +--------------------------------------------------------------------------------------------------------------+" << endl;
+        cout << "                                                   Profil Akun                                                   " << endl;
+        cout << " ________________________________________________________________________________________________________________\n\n";
+   		cout << "   Masukan Nama Anda               : https://bookshop.com/"; 
+   		cin.ignore();
+   		getline(cin, name); 
+   		cout << "   Masukan Alamat Anda (Daerah)    : ";
+   		getline(cin, map);
+   		cout << "   Masukan Email Anda              : ";
+   		cin >> email;
+   		cout << "   Masukan No Telepon Anda         : ";
+   		cin >> no;
+   		
+   		cout << " +--------------------------------------------------------------------------------------------------------------+" << endl;
+   		cout << "   Cek Data Yang Anda Input : " << endl;
+   		cout << "   Nama Toko Anda           : https://bookshop.com/" << name << endl;
+   		cout << "   Alamat Toko Anda         : " << map << endl;
+   		cout << "   Email Anda               : " << email << endl;
+   		cout << "   No Telepon Anda          : " << no << endl;
+   		
+   		cout << " +--------------------------------------------------------------------------------------------------------------+" << endl;
+   		cout <<"\n";
+   		cout << "   Menu Pilihan : " << endl;
+        cout << "   1. Lihat Buku Terbaru  " << endl;
+        cout << "   2. Kembali Ke Menu \n\n";
+		cout << "   Pilihan Anda : ";
+		cin >> choice1;
+		system("cls");
+		
+		if (choice1==1){
+			goto daftarBuku;
+		} else if (choice1 == 2){
+			goto menu;
+		} 	
+		break;
+		
+	case 2 :
+	    // menu 2
+   	    daftarBuku:
+   	    cout << "\n";
+   	    cout << " https://bookshop.com/" << name << endl;
+ 	    cout <<" " << map << endl;
+   	    cout <<" " << email << endl;
+   	    cout <<" " << no << "\n\n";
+   	    cout << " +---------------------------------------------------------------------------------------------------------------+" << endl;
+        cout << " |                                                      Buku Baru                                                |" << endl;
+        cout << " |_______________________________________________________________________________________________________________|" << endl;
+        cout << " |       No Book       |          Nama Buku           |          Penulis Buku          |          Harga          |" << endl; 
+        cout << " +---------------------------------------------------------------------------------------------------------------+" << endl;
+        cout << " |                     |                              |                                |                         |" << endl;
+        cout << " |          1          |            Hujann            |            Tere Liye           |         95.000          |" << endl;
+        cout << " |          2          |         Bumi Manusia         |       Pramoedya Prananta T.    |         45.000          |" << endl;
+        cout << " |          3          |         Fihi Ma Fihi         |         Jalaludin Rumi         |         80.000          |" << endl;
+        cout << " |          4          |        Laskar Pelangi        |          Andrea Hirata         |         84.150          |" << endl;
+        cout << " |          5          |   Harry Potter and The CC    |          Jhack Thorne          |        102.400          |" << endl;
+        cout << " |                     |                              |                                |                         |" << endl;
+        cout << " +---------------------------------------------------------------------------------------------------------------+" << endl;
+        cout << "\n";
+        
+        // menu pilihan
+        cout << " Menu Pilihan : " << endl;
+        cout << " 1. Beli Buku Sekarang " << endl;
+		cout << " Pilihan Anda : ";  
+		cin >> choice2;
+		system("cls");
+		
+		if (choice2 == 1){
+			goto buyBook;
+		} else {
+			cout << "Pilihan Yang Anda Pilih Tidak Tersedia ";
+		}
+		break;
+		
+	case 3 :
+		// menu 3
+   	    buyBook:
+        // menu beli buku
+        menuBuy:
+        cout << "\n";
+   	    cout << " https://bookshop.com/" << name << endl;
+ 	    cout <<" " << map << endl;
+   	    cout <<" " << email << endl;
+   	    cout <<" " << no << "\n\n";
+        cout << " +---------------------------------------------------------------------------------------------------------------+" << endl;
+        cout << " |                                                       Beli Buku                                               |" << endl;
+        cout << " |_______________________________________________________________________________________________________________| \n\n ";
+        cout << " Masukan Nama Buku       : ";
+        cin.ignore();
+        getline(cin, nameBook);
+        cout << "  Harga Buku              : ";
+        cin >> harga;
+        cout << "  Jumlah Buku             : ";
+        cin >> jml;
+        cout << "\n";
+        cout << "  Jadi Jumlah Yang Harus DiBayarkan : "<< harga * jml << endl;
+        cout << " ________________________________________________________________________________________________________________\n\n";
+        cout << " \t\t\t Terima Kasih Sudah Membeli Buku di bookshop/@damar.glh__ . " << endl;
+        cout << " ________________________________________________________________________________________________________________" << endl;;
+		break;
+		
+	case 4 :
+    	// menu 4
+    	cout << "\n\n";
+    	do {
+		cout << " ________________________________________________________________________________________________________________\n\n";
+        cout << " \t Terima Kasih Sudah Mengunjungi Toko Buku Sederhana Created By @damar.glh__ . " << endl;
+        cout << " ________________________________________________________________________________________________________________\n\n";
+		out++;	
+		} while (out <=3);
+    	break;
+    	
+    default :
+    	cout << " ________________________________________________________________________________________________________________\n\n";
+    	cout << "\t\t\t\t Pilihan Yang Anda Pilih Tidak Tersedia !!! " << endl;
+    	cout << " ________________________________________________________________________________________________________________\n\n";
+    	break;
+    	
+   }
+    
+}
